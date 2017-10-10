@@ -1,0 +1,431 @@
+/* Shared */
+
+$basemargin: 2rem;
+$basemarginSmall: 1.5rem;
+
+$color-green: #47b31a;
+$color-green-light: #add750;
+
+$color-yellow: #FFC346;
+
+$color-orange: #e58f48;
+$color-red: #ca2f2f;
+
+$color-gray: #979797;
+$color-gray-light: #DFDFDF;
+$color-gray-light-light: #EFEFEF;
+
+$color-blue: #0091FF;
+$color-blue-light: #D2E6F5;
+
+* {
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4 {
+  clear: both;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #fff;
+  font-family: Publik,Helvetica Neue,Helvetica,Arial,sans-serif;
+  color: #333;
+}
+
+.container {
+  position: relative;
+  max-width: 600px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 3px;
+}
+
+@media (min-width: 769px) {
+  .container {
+    margin: $basemargin auto;
+  }
+}
+
+/* Result Component */
+.resultGraphs {
+  padding: 0 $basemargin $basemarginSmall $basemargin;
+  p {
+    text-align: center;
+  }
+}
+
+.resultGraphics {
+  margin: $basemarginSmall/2 0;
+}
+
+.resultParties {
+  font-size: 12px;
+}
+
+.continue {
+
+  padding: $basemarginSmall $basemargin;
+
+  p {
+    text-align: center;
+  }
+}
+.center {
+  text-align: center;
+  margin-top: $basemarginSmall;
+}
+.btnDefault {
+  color: #333;
+  background-color: #fff;
+
+  font-size: 14px;
+
+  padding: 0 2em;
+
+  -webkit-border-radius: 4em 4em 4em 4em;
+  -moz-border-radius: 4em 4em 4em 4em;
+  border-radius: 4em 4em 4em 4em;
+
+  line-height: 2.5;
+  font-weight: normal;
+
+  -webkit-font-smoothing: antialiased;
+  border: 1px solid $color-gray;
+
+  // width: 100%;
+  margin: 0 auto;
+
+  &:hover {
+    // background-color: $color-blue-light;
+  }
+  &:active, &:focus {
+    background-color: $color-blue;
+  }
+}
+
+.btnContinue {
+  color: #fff;
+  background-color: $color-green;
+
+  font-size: 24px;
+
+  padding: 0 3em;
+
+  -webkit-border-radius: 4em 4em 4em 4em;
+  -moz-border-radius: 4em 4em 4em 4em;
+  border-radius: 4em 4em 4em 4em;
+
+  line-height: 2.5;
+  font-weight: normal;
+
+  -webkit-font-smoothing: antialiased;
+  border: none;
+
+  width: 100%;
+  &:hover {
+    // background-color: $color-green-light;
+  }
+  &:active, &:focus {
+    background-color: $color-blue;
+  }
+}
+
+/* Quiz Component */
+.answerOptions, .impWrapper {
+  margin: 0.5rem $basemargin $basemarginSmall $basemargin;
+  padding: 0;
+  list-style: none;
+}
+
+.impWrapper {
+  color: $color-gray;
+  p {
+    padding-left: 2em;
+  }
+}
+
+
+/* .squaredFour
+.squaredFour {
+  width: 20px;
+  position: relative;
+  // margin: 20px auto;
+  p {
+    display: inline-block;
+    width: 100%;
+    margin: 0;
+    padding: 2em 0 0 0;
+  }
+  label {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #fcfff4;
+    background: linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
+    border-radius: 4px;
+    box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0,0,0,0.5);
+    &:after {
+      content: '';
+      width: 9px;
+      height: 5px;
+      position: absolute;
+      top: 4px;
+      left: 4px;
+      border: 3px solid #333;
+      border-top: none;
+      border-right: none;
+      background: transparent;
+      opacity: 0;
+      transform: rotate(-45deg);
+    }
+    &:hover::after {
+      opacity: 0.5;
+    }
+  }
+  input[type=checkbox] {
+    visibility: hidden;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    &:checked + label:after {
+      opacity: 1;
+    }
+  }
+}
+end .squaredFour */
+
+/* QuestionCount Component */
+.questionCount {
+  padding: $basemarginSmall $basemargin 0;
+  font-size: 14px;
+  .barWrapper {
+    display: none;
+  }
+}
+
+.areaName {
+  font-size: 14px;
+  font-weight: normal;
+  text-transform: uppercase;
+  margin: 0;
+  float: left;
+  // color: #979797;
+}
+
+.barWrapper {
+  width: 50%;
+  max-width: 300px;
+  background: $color-gray-light;
+  float: right;
+  margin-top: 0.25rem;
+  // padding-right: 1rem;
+  &--block {
+    margin-bottom: 4px;
+    float: none;
+    max-width: 100%;
+    width: 100%;
+    background-color: $color-gray-light-light;
+    &-bg-striped {
+      background: #ffe6d2;
+    background: -moz-linear-gradient(left, #ffe6d2 0%, #ffe6d2 65%, #fff0d2 65%, #fff0d2 80%, #d2e6f5 80%, #d2e6f5 100%);
+    background: -webkit-linear-gradient(left, #ffe6d2 0%,#ffe6d2 65%,#fff0d2 65%,#fff0d2 80%,#d2e6f5 80%,#d2e6f5 100%);
+    background: linear-gradient(to right, #ffe6d2 0%,#ffe6d2 65%,#fff0d2 65%,#fff0d2 80%,#d2e6f5 80%,#d2e6f5 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffe6d2', endColorstr='#d2e6f5',GradientType=1 );
+
+    }
+  }
+}
+
+.bar {
+  background-color: $color-blue;
+  height: 0.5rem;
+  &--block {
+    min-width: 2px;
+    height: 0.8rem;
+    &-red {
+      background-color: $color-red;
+    }
+    &-yellow {
+      background-color: $color-yellow;
+    }
+  }
+}
+
+.resultPercent {
+
+  &--progress {
+    display: block;
+    text-align: right;
+    width: 42%;
+    padding: 0 0.3em 0.5em 0;
+    border-right: 2px solid $color-blue;
+    margin-bottom: -0.5em;
+    color: $color-blue;
+    font-size: 14px;
+  }
+
+}
+
+.partResult {
+  clear: both;
+  margin: 0;
+  padding: 0.5rem $basemargin $basemarginSmall $basemargin;
+
+  h2 {
+    text-align: center;
+    font-weight: normal;
+    font-size: 24px;
+  }
+  p {
+    text-align: center;
+    max-width: 365px;
+    margin: 0 auto $basemarginSmall auto;
+  }
+
+}
+
+.counterNums {
+  // display: none;
+  float: right;
+}
+
+/* Question Component */
+.question, .resultStatement {
+  clear: both;
+  margin: 0;
+  padding: 0.5rem $basemargin $basemarginSmall $basemargin;
+  font-weight: normal;
+  font-size: 24px;
+  h4 {
+    font-size: 16px;
+    font-weight: normal;
+    text-align: center;
+    margin: 0;
+    padding: 1em 0 0 0;
+    border-top: 1px solid $color-gray-light
+  }
+
+}
+
+/* AnswerOption Component */
+.answerOption {
+  // border: 1px solid #eee;
+  // text-align: center;
+  // margin-bottom: -1px;
+}
+
+// Coloring
+.answerOption:first-child {
+
+  // color: #23821E;
+  .radioCustomButton ~ .radioCustomLabel:before {
+    background-color: $color-green
+  }
+
+}
+.answerOption:nth-child(2) {
+  // color: #32A532;
+  .radioCustomButton ~ .radioCustomLabel:before {
+    background-color: $color-green-light
+  }
+}
+.answerOption:nth-child(3) {
+  // color: #F0828C;
+  .radioCustomButton ~ .radioCustomLabel:before {
+    background-color: $color-orange
+  }
+}
+.answerOption:last-child {
+  // color: #B9232D;
+  .radioCustomButton ~ .radioCustomLabel:before {
+    background-color: $color-red
+  }
+}
+
+
+.answerOption:hover {
+  // background-color: #eefbfe;
+}
+
+.radioCustomButton {
+    position: absolute;
+    width: auto;
+    opacity: 0;
+}
+
+.radioCustomButton,
+.radioCustomLabel {
+    display: inline-block;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+.radioCustomLabel {
+    position: relative;
+    width: 100%;
+    margin: 0;
+    padding: $basemarginSmall $basemargin $basemarginSmall $basemargin*2;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.radioCustomButton ~ .radioCustomLabel:before {
+    position: absolute;
+    top: 11px;
+    left: 0;
+    width: 45px;
+    height: 45px;
+    // transform: translate(-50%, 0);
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    background: transparent;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    transition: all 0.3s;
+}
+
+.radioCustomButton:checked ~ .radioCustomLabel:before {
+    content: '';
+    background-image: url(./svg/icon-check.svg);
+    background-repeat: no-repeat;
+    background-size: 43px;
+    box-shadow: 0 0 0 2px #333;
+}
+
+/* Animation */
+.fade-enter {
+    opacity: 0;
+}
+
+.fade-enter.fade-enter-active {
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out 0.3s;
+}
+
+.fade-leave {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 1;
+}
+
+.fade-leave.fade-leave-active {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.fade-appear {
+    opacity: 0;
+}
+
+.fade-appear.fade-appear-active {
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+}
