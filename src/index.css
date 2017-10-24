@@ -195,6 +195,9 @@ end .squaredFour */
   clear: both;
   margin: 0;
   padding: 0.5rem 2rem 1.5rem 2rem; }
+  .partResult img {
+    width: 100%;
+    max-width: 100%; }
   .partResult h2 {
     text-align: center;
     font-weight: normal;

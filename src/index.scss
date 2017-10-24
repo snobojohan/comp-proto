@@ -69,6 +69,7 @@ body {
   padding: $basemarginSmall $basemargin;
 
   p {
+    margin-top: 0;
     text-align: center;
   }
 }
@@ -108,6 +109,9 @@ body {
 .btnContinue {
   color: #fff;
   background-color: $color-green;
+
+  text-decoration: none;
+  display: inline-block;
 
   font-size: 24px;
 
@@ -272,11 +276,19 @@ end .squaredFour */
 }
 
 .partResult {
+
   clear: both;
   margin: 0;
-  padding: 0.5rem $basemargin $basemarginSmall $basemargin;
+  padding: 0.5rem $basemargin 0 $basemargin;
+
+  img {
+    width: 100%;
+    max-width: 100%;
+  }
 
   h2 {
+    padding-top: 0;
+    margin-top: 0;
     text-align: center;
     font-weight: normal;
     font-size: 24px;

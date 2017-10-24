@@ -65,14 +65,15 @@ function Result(props) {
       <div className="partResult">
       <h2>Snyggt jobbat!</h2>
 
-      <p>Efter dessa svar tror vi att vi kan räkna fram din partimatchning med 42 % träffsäkerhet</p>
+      <p>Så nära träffar partierna dina åsikter</p>
 
-      <ResultBar percent="42" color="blue" bgcolor="striped" type="progress" parties="" />
-    </div>
+        <img src="https://media.svt.se/svtflow/traff.png" alt="" />
+
+      </div>
 
       <div className="continue">
         <p>Uppnå högre träffsäkerhet genom att fortsätta</p>
-        <button className="btnContinue">Fler frågor</button>
+        <a href="https://drag-boxes.firebaseapp.com" className="btnContinue">Fler frågor</a>
       </div>
 
 
