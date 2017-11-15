@@ -1,16 +1,24 @@
 import React, { Component } from 'react';
 import update from 'react-addons-update';
+import quizOptions from './api/quizOptions';
 import quizQuestions from './api/quizQuestions';
 import Quiz from './components/Quiz';
 import Result from './components/Result';
+import Section from './components/Section';
+import Prio from './components/Prio';
 
-import './App.css';
+function getUrlParameter(name) {
+    name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+    var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+    var results = regex.exec(window.location.search);
+    return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+};
 
 class App extends Component {
 
   constructor(props) {
-    super(props);
 
+    super(props);
     this.state = {
       counter: 0,
       questionId: 1,
@@ -23,17 +31,30 @@ class App extends Component {
         SD: 0,
         none: 0
       },
-      result: ''
+      result: '',
+      optionsCounter: 0,
+      area: '',
+      areaId: '',
+      description: '',
+      options: [],
+      isEnd: false
     };
 
     this.handleAnswerSelected = this.handleAnswerSelected.bind(this);
+    this.handleOptionSelected = this.handleOptionSelected.bind(this);
   }
 
   componentWillMount() {
     const shuffledAnswerOptions = quizQuestions.map((question) => question.answers);
     this.setState({
       question: quizQuestions[0].question,
-      answerOptions: shuffledAnswerOptions[0]
+      answerOptions: shuffledAnswerOptions[0],
+
+      // options
+      area: quizOptions[0].area,
+      areaId: quizOptions[0].areaId,
+      description: quizOptions[0].description,
+      options: quizOptions[0].options
     });
   }
 
@@ -94,6 +115,52 @@ class App extends Component {
     });
   }
 
+  handleOptionSelected( values, e, formApi ) {
+
+    const optionsCt = this.state.optionsCounter + 1;
+
+    console.log(this.state.optionsCounter , quizOptions.length);
+
+    if (optionsCt >= quizOptions.length) {
+      console.log("END OF OPTIONS");
+      // setTimeout(() => this.setResults(this.getResults()), 300);
+      setTimeout(() => {
+        // console.log("DO IT",quizOptions[optionsCt].area);
+        this.setState({
+          isEnd: true
+        });
+
+      }, 300);
+
+    } else {
+      console.log("handleOptionSelected",values, e, formApi);
+
+      // TODO: When it's done
+
+
+
+      setTimeout(() => {
+
+        // console.log("DO IT",quizOptions[optionsCt].area);
+
+        this.setState({
+          optionsCounter: optionsCt,
+          area: quizOptions[optionsCt].area,
+          areaId: quizOptions[optionsCt].areaId,
+          description: quizOptions[optionsCt].description,
+          options: quizOptions[optionsCt].options
+        });
+
+      }, 300);
+
+      setTimeout(() => formApi.resetAll(), 299);
+    }
+
+
+
+
+  }
+
   getResults() {
     const answersCount = this.state.answersCount;
     const answersCountKeys = Object.keys(answersCount);
@@ -127,6 +194,26 @@ class App extends Component {
     );
   }
 
+  renderPrio() {
+
+    if(!this.state.areaId){
+      console.log("ENDED");
+      return (
+        <div><h2>SLUT PÅ PROTOTYP</h2></div>
+      )
+    }
+
+    return (
+      <Prio foo="bar" area={this.state.area} description={this.state.description} areaid={this.state.areaId} options={this.state.options} onSubmitOptions={this.handleOptionSelected} />
+    );
+  }
+
+  renderSection(isEnd) {
+    return (
+      <Section isend={isEnd} />
+    );
+  }
+
   renderResult() {
     return (
       <Result quizResultCount={this.state.answersCount} quizResult={this.state.result} />
@@ -134,12 +221,26 @@ class App extends Component {
   }
 
   render() {
-    return (
-      <div className="App">
-        <div className="App-header">
 
-        </div>
-        {this.state.result ? this.renderResult() : this.renderQuiz()}
+    let compToRender = this.renderQuiz();
+
+    if(getUrlParameter('prio') === "true") {
+      if(!this.state.isEnd){
+        compToRender = this.renderPrio();
+      } else {
+        compToRender = this.renderSection(true);
+      }
+
+    } else if (this.state.result) {
+      // compToRender = this.renderResult();
+      compToRender = this.renderSection(false);
+    }
+
+    return (
+      <div className="app">
+        {
+          compToRender
+        }
       </div>
     );
   }
