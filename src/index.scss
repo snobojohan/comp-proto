@@ -111,14 +111,53 @@ body {
   }
 }
 
-.btnContinue {
+.btnStart {
   color: #fff;
-  background-color: $color-green;
+  background-color: $svt-color_blue_regular;
 
   text-decoration: none;
   display: inline-block;
 
-  font-size: 24px;
+
+
+  font-size: 18px;
+  text-align: center;
+
+  padding: 15px 1em 10px 1em;
+
+  -webkit-border-radius: 4em 4em 4em 4em;
+  -moz-border-radius: 4em 4em 4em 4em;
+  border-radius: 4em 4em 4em 4em;
+
+  line-height: 23px;
+  font-weight: bold;
+
+  -webkit-font-smoothing: antialiased;
+  border: none;
+
+  width: 100%;
+  span {
+    display: block;
+    font-size: 14px;
+    opacity: 0.6;
+  }
+  &:hover {
+    // background-color: $color-green-light;
+  }
+  &:active, &:focus {
+    background-color: $color-blue;
+  }
+}
+
+.btnContinue {
+  color: #fff;
+  background-color: $svt-color_blue_regular;
+
+  text-decoration: none;
+  display: inline-block;
+
+  text-transform: uppercase;
+  font-size: 20px;
   text-align: center;
 
   padding: 0 1em;
@@ -128,12 +167,17 @@ body {
   border-radius: 4em 4em 4em 4em;
 
   line-height: 2.5;
-  font-weight: normal;
+  font-weight: bold;
 
   -webkit-font-smoothing: antialiased;
   border: none;
 
   width: 100%;
+  span {
+    display: block;
+    font-size: 14px;
+    opacity: 0.6;
+  }
   &:hover {
     // background-color: $color-green-light;
   }
@@ -281,7 +325,7 @@ end .squaredFour */
 
 }
 
-.partResult, .sectionResult {
+.partInfo, .partResult, .sectionResult {
 
   clear: both;
   margin: 0;
@@ -571,13 +615,13 @@ end .squaredFour */
 
 .btn {
 
-  font-size: 0.9rem;
+  font-size: 1rem;
   border-radius: 4em;
   padding: 0 2em;
-  line-height: 2.5;
+  line-height: 3;
   -webkit-font-smoothing: antialiased;
   display: inline-block;
-  margin: 1em 4px 4px 0;
+  margin: .5em 4px 4px 0;
   text-align: center;
   vertical-align: middle;
   white-space: nowrap;
@@ -585,17 +629,45 @@ end .squaredFour */
   border: 1px solid #979797;
   text-decoration: none;
   margin-right: 1em;
-  color: #979797;
+  color: #333;
   background: #FFF;
 
+  &--full {
+    width: 100%;
+  }
+
   &--primary {
-    background-color: $svt-color_green_regular;
-    border-color: $svt-color_green_regular;
+    background-color: $svt-color_blue_regular;
+    border-color: $svt-color_blue_regular;
     font-weight: bold;
     color: #FFF;
   }
+
+  &--hidden {
+    display: none;
+  }
+}
+.halfImage {
+  width: 322px;
+  overflow: visible;
+}
+.crisp {
+  image-rendering: -moz-crisp-edges;         /* Firefox */
+  image-rendering:   -o-crisp-edges;         /* Opera */
+  image-rendering: -webkit-optimize-contrast;/* Webkit (non-standard naming) */
+  image-rendering: crisp-edges;
+  -ms-interpolation-mode: nearest-neighbor;  /* IE (non-standard property) */
+
 }
 
+.makeMeSticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0px;
+  padding: 0.5rem 2rem;
+  background: rgba(254,254,254,0.4);
+  box-shadow: 0px 0px 25px #FFFFFF;
+}
 /*
 .radioCustomButton {
     position: absolute;

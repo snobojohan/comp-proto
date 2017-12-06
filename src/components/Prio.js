@@ -1,14 +1,12 @@
 import React from 'react';
 import { Component } from 'react'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
-// import quizOptions from '../api/quizOptions';
-// import PropTypes from 'prop-types';
-// import classNames from 'classnames';
+
 import { Form, Checkbox } from 'react-form';
 import classNames from 'classnames';
 
 let gDisabled = false;
-let gValues = [];
+let gValues = {};
 
 class Prio extends Component {
 
@@ -57,9 +55,38 @@ class Prio extends Component {
       );
   }
 
-  render() {
+  renderButtons() {
 
-    // console.log(this.props);
+    var strValues = JSON.stringify(gValues);
+
+    console.log("--->>> ",strValues,strValues.indexOf("true"));
+
+
+
+    var sendClass = classNames({
+      'btn': true,
+      'btn--full': true,
+      'btn--primary': true,
+      'btn--hidden': strValues.indexOf("true") < 0,
+    });
+
+    var jumpClass = classNames({
+      'btn': true,
+      'btn--full': true,
+      'btn--primary': false,
+      'btn--hidden': strValues.indexOf("true") > -1,
+    });
+
+    return (
+      <div>
+        <button type="submit" className={sendClass}>Skicka</button>
+        <button type="submit" className={jumpClass}>Ingen åsikt! Hoppa över frågan</button>
+      </div>
+    )
+
+  }
+
+  render() {
 
     return (
       <ReactCSSTransitionGroup
@@ -72,35 +99,38 @@ class Prio extends Component {
         transitionAppearTimeout={300}
       >
         <div key={this.props.areaid}>
-        <div className="padder">
 
-          <h3 className="aname">
+        <div className="questionCount">
+          <h3 className="areaName">
             Ekonomi
           </h3>
+          <span className="counterNums">Fråga {this.props.counter + 1} av 2</span>
+        </div>
 
-        <h2 className="hed">{this.props.area}</h2>
+        <div className="padder">
 
-        <p className="ntro">{this.props.description}</p>
+          <h2 className="hed">{this.props.area}</h2>
 
+          <p className="ntro">{this.props.description}</p>
 
-        <Form formDidUpdate={this.handleChange} onSubmit={this.props.onSubmitOptions}>
-            { formApi => (
-              <div>
-                <form className="frm"
-                 onSubmit={formApi.submitForm}
-                 name={this.props.areaId}
-                 id={this.props.areaId}
-                 >
-                 <div className="frm__options">
-                  {this.props.options.map(this.renderOptions)}
-                 </div>
-
-                  <button type="submit" className="btn">Hoppa över frågan</button>
-                  <button type="submit" className="btn btn--primary">Skicka</button>
-                </form>
-              </div>
-            )}
-          </Form>
+          <Form formDidUpdate={this.handleChange} onSubmit={this.props.onSubmitOptions}>
+              { formApi => (
+                <div>
+                  <form className="frm"
+                   onSubmit={formApi.submitForm}
+                   name={this.props.areaId}
+                   id={this.props.areaId}
+                   >
+                   <div className="frm__options">
+                    {this.props.options.map(this.renderOptions)}
+                   </div>
+                   <span>
+                   {this.renderButtons()}
+                   </span>
+                  </form>
+                </div>
+              )}
+            </Form>
           </div>
           </div>
       </ReactCSSTransitionGroup>

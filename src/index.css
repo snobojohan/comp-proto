@@ -98,22 +98,50 @@ body {
   .btnDefault:active, .btnDefault:focus {
     background-color: #0091FF; }
 
-.btnContinue {
+.btnStart {
   color: #fff;
-  background-color: #47b31a;
+  background-color: #2891c8;
   text-decoration: none;
   display: inline-block;
-  font-size: 24px;
+  font-size: 18px;
+  text-align: center;
+  padding: 15px 1em 10px 1em;
+  -webkit-border-radius: 4em 4em 4em 4em;
+  -moz-border-radius: 4em 4em 4em 4em;
+  border-radius: 4em 4em 4em 4em;
+  line-height: 23px;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+  border: none;
+  width: 100%; }
+  .btnStart span {
+    display: block;
+    font-size: 14px;
+    opacity: 0.6; }
+  .btnStart:active, .btnStart:focus {
+    background-color: #0091FF; }
+
+.btnContinue {
+  color: #fff;
+  background-color: #2891c8;
+  text-decoration: none;
+  display: inline-block;
+  text-transform: uppercase;
+  font-size: 20px;
   text-align: center;
   padding: 0 1em;
   -webkit-border-radius: 4em 4em 4em 4em;
   -moz-border-radius: 4em 4em 4em 4em;
   border-radius: 4em 4em 4em 4em;
   line-height: 2.5;
-  font-weight: normal;
+  font-weight: bold;
   -webkit-font-smoothing: antialiased;
   border: none;
   width: 100%; }
+  .btnContinue span {
+    display: block;
+    font-size: 14px;
+    opacity: 0.6; }
   .btnContinue:active, .btnContinue:focus {
     background-color: #0091FF; }
 
@@ -233,18 +261,18 @@ end .squaredFour */
   color: #0091FF;
   font-size: 14px; }
 
-.partResult, .sectionResult {
+.partInfo, .partResult, .sectionResult {
   clear: both;
   margin: 0;
   padding: 0.5rem 2rem 0 2rem; }
-  .partResult img, .sectionResult img {
+  .partInfo img, .partResult img, .sectionResult img {
     width: 100%;
     max-width: 100%; }
-  .partResult h2, .sectionResult h2 {
+  .partInfo h2, .partResult h2, .sectionResult h2 {
     padding-top: 0;
     font-weight: normal;
     font-size: 24px; }
-  .partResult p, .sectionResult p {
+  .partInfo p, .partResult p, .sectionResult p {
     max-width: 365px; }
 
 .ProgressBar {
@@ -507,13 +535,13 @@ end .squaredFour */
   color: #B7BCC3; }
 
 .btn {
-  font-size: 0.9rem;
+  font-size: 1rem;
   border-radius: 4em;
   padding: 0 2em;
-  line-height: 2.5;
+  line-height: 3;
   -webkit-font-smoothing: antialiased;
   display: inline-block;
-  margin: 1em 4px 4px 0;
+  margin: .5em 4px 4px 0;
   text-align: center;
   vertical-align: middle;
   white-space: nowrap;
@@ -521,13 +549,40 @@ end .squaredFour */
   border: 1px solid #979797;
   text-decoration: none;
   margin-right: 1em;
-  color: #979797;
+  color: #333;
   background: #FFF; }
+  .btn--full {
+    width: 100%; }
   .btn--primary {
-    background-color: #32a532;
-    border-color: #32a532;
+    background-color: #2891c8;
+    border-color: #2891c8;
     font-weight: bold;
     color: #FFF; }
+  .btn--hidden {
+    display: none; }
+
+.halfImage {
+  width: 322px;
+  overflow: visible; }
+
+.crisp {
+  image-rendering: -moz-crisp-edges;
+  /* Firefox */
+  image-rendering: -o-crisp-edges;
+  /* Opera */
+  image-rendering: -webkit-optimize-contrast;
+  /* Webkit (non-standard naming) */
+  image-rendering: crisp-edges;
+  -ms-interpolation-mode: nearest-neighbor;
+  /* IE (non-standard property) */ }
+
+.makeMeSticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0px;
+  padding: 0.5rem 2rem;
+  background: rgba(254, 254, 254, 0.4);
+  box-shadow: 0px 0px 25px #FFFFFF; }
 
 /*
 .radioCustomButton {

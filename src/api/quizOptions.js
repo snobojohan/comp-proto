@@ -1,8 +1,41 @@
 var quizOptions = [
   {
-    "area": "Lokala politiska förslag",
+    "area": "Vilka av följande kommunala förslag tycker du är viktigast?",
     "areaId": "local",
-    "description": "Välj max 3 förslag som känns extra viktiga för dig",
+    "type": "max",
+    "description": "Välj upp till 3 förslag som känns extra viktiga för dig",
+    "options": [
+      {
+        "option" : "Kraftigt utbyggd tunnelbana"
+      },
+      {
+        "option" : "Alla över 85 som vill ska få plats på servicehus"
+      },
+      {
+        "option" : "Det ska finnas nattöppna förskolor"
+      },
+      {
+        "option" : "Nya och förbättrade cykelvägar"
+      },
+      {
+        "option" : "Bättre underhåll av gator och vägar för bilar"
+      },
+      {
+        "option" : "Gratis läxhjälp till alla skolelever"
+      },
+      {
+        "option" : "Kommunen ska bygga och tillhandahålla billiga lägenheter"
+      },
+      {
+        "option" : "Kommunalskatten ska sänkas"
+      }
+    ]
+  }/*,
+  {
+    "area": "Hur mycket borde kommunen satsa på förskola och barnomsorg jämfört med nu?",
+    "areaId": "edu",
+    "type": "single",
+    "description": "foo",
     "options": [
       {
         "option" : "Kraftigt utbyggd tunnelbana"
@@ -23,11 +56,11 @@ var quizOptions = [
         "option" : "Valfrihet inom skola, barn- och äldreomsorgen"
       }
     ]
-  },
+  }/*,
   {
     "area": "Kommun",
     "areaId": "kommun",
-    "description": "Välj max 3 budgetområden som borde prioriteras",
+    "description": "Välj upp till 3 budgetområden som borde prioriteras högre än idag",
     "options": [
       {
         "option" : "Förskola och barnomsorg"
@@ -57,11 +90,11 @@ var quizOptions = [
         "option" : "Sänkt kommunalskatt"
       }
     ]
-  }/*,
+  },
   {
     "area": "Landsting",
     "areaId": "landsting",
-    "description": "Välj max 3 budgetområden som borde prioriteras",
+    "description": "Välj upp till 3 budgetområden som borde prioriteras",
     "options": [
       {
         "option" : "Vårdcentraler och primärvård"
@@ -92,7 +125,7 @@ var quizOptions = [
   {
     "area": "Riksdag",
     "areaId": "riket",
-    "description": "Välj max 3 budgetområden som borde prioriteras",
+    "description": "Välj upp till 3 budgetområden som borde prioriteras",
     "options": [
       {
         "option" : "Utbildning och forskning"

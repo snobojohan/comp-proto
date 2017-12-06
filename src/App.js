@@ -6,6 +6,7 @@ import Quiz from './components/Quiz';
 import Result from './components/Result';
 import Section from './components/Section';
 import Prio from './components/Prio';
+import Info from './components/Info';
 
 function getUrlParameter(name) {
     name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
@@ -27,7 +28,7 @@ class App extends Component {
       answer: '',
       answersCount: {
         RodGron: 0,
-        Allians: 0,
+          Allians: 0,
         SD: 0,
         none: 0
       },
@@ -136,9 +137,6 @@ class App extends Component {
       console.log("handleOptionSelected",values, e, formApi);
 
       // TODO: When it's done
-
-
-
       setTimeout(() => {
 
         // console.log("DO IT",quizOptions[optionsCt].area);
@@ -204,7 +202,13 @@ class App extends Component {
     }
 
     return (
-      <Prio foo="bar" area={this.state.area} description={this.state.description} areaid={this.state.areaId} options={this.state.options} onSubmitOptions={this.handleOptionSelected} />
+      <Prio foo="bar" counter={this.state.optionsCounter} area={this.state.area} description={this.state.description} areaid={this.state.areaId} options={this.state.options} onSubmitOptions={this.handleOptionSelected} />
+    );
+  }
+
+  renderInfo() {
+    return (
+      <Info />
     );
   }
 
@@ -222,15 +226,19 @@ class App extends Component {
 
   render() {
 
-    let compToRender = this.renderQuiz();
+    let compToRender = this.renderInfo(); // this.renderQuiz();
+
+    if(getUrlParameter('regular') === "true") {
+      compToRender = this.renderQuiz();
+    }
 
     if(getUrlParameter('prio') === "true") {
       if(!this.state.isEnd){
         compToRender = this.renderPrio();
       } else {
-        compToRender = this.renderSection(true);
+        // compToRender = this.renderSection(true);
+        compToRender = this.renderResult();
       }
-
     } else if (this.state.result) {
       // compToRender = this.renderResult();
       compToRender = this.renderSection(false);
