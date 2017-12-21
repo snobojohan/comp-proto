@@ -63,44 +63,13 @@ function Result(props) {
       transitionAppearTimeout={500}
     >
       <div className="partResult">
-      <h2>Snyggt jobbat!</h2>
 
-      <p>Så nära träffar partierna dina åsikter</p>
-
-        <img src="https://media.svt.se/svtflow/traff.png" alt="" />
-
+        <div className="continue">
+          <p>Byte av prototypgränssnitt</p>
+          <a href="https://snobojohan.typeform.com/to/nov3i2" className="btnContinue">Fler frågor</a>
+        </div>
+        
       </div>
-
-      <div className="continue">
-        <p>Uppnå högre träffsäkerhet genom att fortsätta</p>
-        <a href="https://drag-boxes.firebaseapp.com" className="btnContinue">Fler frågor</a>
-      </div>
-
-
-
-      <div className="resultStatement">
-
-        <h4>Preliminär blockmatchning</h4>
-
-      </div>
-
-      <div className="resultGraphs">
-        <ResultBar count={props.quizResultCount.RodGron} color="red" parties="S, MP, V" />
-        <ResultBar count={props.quizResultCount.Allians} color="blue" parties="M, L, KD, C" />
-        <ResultBar count={props.quizResultCount.SD} color="yellow" parties="SD" />
-
-        <p>Du matchar närmast <strong>{blockName(props.quizResult)}</strong></p>
-
-        <div className="center">
-        <button className="btnDefault">Hur svarade partierna?</button>
-      </div>
-
-      </div>
-
-
-
-
-
     </ReactCSSTransitionGroup>
   );
 

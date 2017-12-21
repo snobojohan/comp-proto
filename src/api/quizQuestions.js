@@ -1,4 +1,5 @@
 var quizQuestions = [
+  /*
   {
       question: "Satsa på ett sverige med små inkomstskillnader",
       answers: [
@@ -19,7 +20,7 @@ var quizQuestions = [
               content: "Mycket dåligt förslag"
           }
       ]
-  },
+  },*/
   {
       question: "Satsa på mer privat företagsamhet och marknadsekonomi",
       answers: [

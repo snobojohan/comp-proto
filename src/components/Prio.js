@@ -79,8 +79,12 @@ class Prio extends Component {
 
     return (
       <div>
-        <button type="submit" className={sendClass}>Skicka</button>
-        <button type="submit" className={jumpClass}>Ingen åsikt! Hoppa över frågan</button>
+        {/*
+        <button type="submit" className={sendClass}>Nästa</button>
+        <button type="submit" className={jumpClass}>Hoppa över frågan</button>
+        */}
+        <a href="https://snobojohan.typeform.com/to/nov3i2" className={sendClass}>Nästa</a>
+        <a href="https://snobojohan.typeform.com/to/nov3i2" className={jumpClass}>Hoppa över frågan</a>
       </div>
     )
 

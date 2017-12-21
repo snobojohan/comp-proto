@@ -17,7 +17,7 @@ function Section(props) {
     >
 
       <div key="foo">
-      
+
         <div className="sectionResult">
 
         <div className="wrapper">
@@ -79,7 +79,7 @@ function Section(props) {
 
           <p>Du har klarat av ideologifrågorna</p>
 
-          <p>Nu följer ekonomiska frågor där du kan välja att prioritera 1 till 3 alternativ</p>
+          <p>Nu följer kommunala förslag där du kan välja att prioritera upp till 3 alternativ</p>
 
         </div>
 

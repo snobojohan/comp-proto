@@ -24,23 +24,23 @@ function Info(props) {
       </div>
 
         <div className="makeMeSticky">
-          <a href="/?regular=true" className="btnStart">STARTA KOMPASSEN<span>Det tar 5 - 10 minuter</span></a>
+            <a href="/?regular=true" className="btnStart">STARTA KOMPASSEN<span>Det tar 5 - 10 minuter</span></a>
         </div>
 
-  <div className="partInfo">
-        <h3>Valresultat kommunalval Stockholm 2014</h3>
-        <img src={bars} alt="Resultat" className="crisp halfImage" />
-        <p><strong>Moderaterna</strong> blev med 28%.</p>
+        <div className="partInfo">
 
 
-        <h3>Så styrs Stockholm nu</h3>
+          <h3>Så styrs Stockholm nu</h3>
 
-        <img src={graph} alt="Mandat i sthlm" className="crisp halfImage" />
-        <p><strong>Socialdemokraterna</strong>, <strong>Miljöpartiet</strong>, <strong>Vänsterpartiet</strong> och <strong>Feministiskt initiativ</strong> är de partier som bildar majoritetsstyret med sammanlagt 53%.</p>
+          <img src={graph} alt="Mandat i sthlm" className="crisp halfImage" />
+          <p><strong>Socialdemokraterna</strong>, <strong>Miljöpartiet</strong>, <strong>Vänsterpartiet</strong> och <strong>Feministiskt initiativ</strong> är de partier som bildar majoritetsstyret med sammanlagt 53%.</p>
 
 
+          <h3>Valresultat kommunalval Stockholm 2014</h3>
+          <img src={bars} alt="Resultat" className="crisp halfImage" />
+          <p><strong>Moderaterna</strong> blev största parti med 28%.</p>
 
-      </div>
+        </div>
 
 
         <div className="partInfo">
