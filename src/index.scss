@@ -1,7 +1,7 @@
 /* Shared */
 
 $basemargin: 2rem;
-$basemarginSmall: 1.5rem;
+$basemarginSmall: 1rem;
 
 $color-green: #47b31a;
 $color-green-light: #add750;
@@ -13,15 +13,33 @@ $color-red: #ca2f2f;
 
 $color-gray: #979797;
 $color-gray-light: #DFDFDF;
-$color-gray-light-light: #EFEFEF;
+$color-gray-light-light: #f5f5f5;
 
 $color-blue: #0091FF;
 $color-blue-light: #D2E6F5;
 
+///////
+$color-newsMain: #e13241;
+$color-petroleum: #002b37;
+
+
+//////
+$color-bg: $color-gray-light-light;
+$color-text: $color-petroleum;
+
+$color-mycket-daligt: $color-newsMain;
+$color-ganska-daligt: #ffd2d7;
+
+
+$color-ganska-bra: #cdf0e6;
+$color-mycket-bra: #00dcd2;
+
 @import 'styles/_colors';
 @import 'styles/_mixins';
 
-
+html, body {
+  height: 100%;
+}
 
 * {
   box-sizing: border-box;
@@ -34,23 +52,60 @@ h1, h2, h3, h4 {
 body {
   margin: 0;
   padding: 0;
-  background: #fff;
   font-family: Publik,Helvetica Neue,Helvetica,Arial,sans-serif;
-  color: #333;
+  color: $color-text;
+  background-color: $color-bg;
+}
+
+.container-wrapper {
+  padding: $basemarginSmall;
+
 }
 
 .container {
   position: relative;
-  max-width: 460px;
+  max-width: 800px;
   margin: 0 auto;
   background: #fff;
   border-radius: 3px;
+  padding: $basemarginSmall;
 }
 
-@media (min-width: 769px) {
-  .container {
-    margin: $basemargin auto;
+.container__grid-parent {
+  display: grid;
+  // height: calc(100vh - 4em);
+  grid-template-columns: 100%;
+  grid-template-rows: 1fr 90px;
+  // grid-row-gap: $basemargin;
+}
+
+.container__grid-child--2 {
+  // vertical-align: bottom;
+}
+
+@media (max-width: 769px) {
+
+  .container-wrapper {
+    padding: $basemarginSmall 0;
   }
+
+  .container__grid-parent {
+
+    height: calc(100vh - 4em);
+  }
+  /*
+  .root,
+  .container-wrapper {
+    height: 100%;
+    width: 100%;
+    display: table;
+  }
+
+  .app,
+  .container {
+    display: table-cell;
+  }
+  */
 }
 
 /* Result Component */
@@ -255,7 +310,7 @@ end .squaredFour */
 
 /* QuestionCount Component */
 .questionCount {
-  padding: $basemarginSmall $basemargin 0;
+  padding-top: $basemarginSmall;
   font-size: 14px;
   .barWrapper {
     display: none;
@@ -362,7 +417,7 @@ end .squaredFour */
 .question, .resultStatement {
   clear: both;
   margin: 0;
-  padding: 0.5rem $basemargin $basemarginSmall $basemargin;
+  padding: 0.5rem 0 $basemarginSmall 0;
   font-weight: normal;
   font-size: 24px;
   h4 {
@@ -375,6 +430,64 @@ end .squaredFour */
   }
 
 }
+
+
+// HERE
+.grid-container {
+
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  // grid-template-columns: 100px 100px 100px;
+  grid-gap: 10px;
+
+  li {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    .horizLabel {
+      text-align: center;
+    }
+  }
+
+  // 2 första
+  li:nth-child(-n+2) {
+      text-align: left;
+      .horizLabel {
+        text-align: left;
+      }
+  }
+
+  li:first-child {
+    background-color: $color-mycket-daligt;
+  }
+
+  li:nth-child(2) {
+      background-color: $color-ganska-daligt;
+  }
+
+  // 2 sista
+  li:last-child,
+  li:nth-last-child(2) {
+      text-align: right;
+      .horizLabel {
+        text-align: right;
+      }
+  }
+
+  li:nth-last-child(2) {
+      background-color: $color-ganska-bra;
+  }
+  li:last-child {
+    background-color: $color-mycket-bra;
+  }
+
+
+
+}
+
 
 /* AnswerOption Component */
 .answerOption {

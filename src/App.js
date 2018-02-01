@@ -3,6 +3,7 @@ import update from 'react-addons-update';
 import quizOptions from './api/quizOptions';
 import quizQuestions from './api/quizQuestions';
 import Quiz from './components/Quiz';
+import Horiz from './components/Horiz';
 import Result from './components/Result';
 import Section from './components/Section';
 import Prio from './components/Prio';
@@ -192,6 +193,19 @@ class App extends Component {
     );
   }
 
+  renderHoriz() {
+    return (
+      <Horiz
+        answer={this.state.answer}
+        answerOptions={this.state.answerOptions}
+        questionId={this.state.questionId}
+        question={this.state.question}
+        questionTotal={quizQuestions.length}
+        onAnswerSelected={this.handleAnswerSelected}
+      />
+    );
+  }
+
   renderPrio() {
 
     if(!this.state.areaId){
@@ -230,6 +244,10 @@ class App extends Component {
 
     if(getUrlParameter('regular') === "true") {
       compToRender = this.renderQuiz();
+    }
+
+    if(getUrlParameter('irregular') === "true") {
+      compToRender = this.renderHoriz();
     }
 
     if(getUrlParameter('prio') === "true") {

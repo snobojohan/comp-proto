@@ -1,65 +1,95 @@
-/* Shared
 
-* {
-  box-sizing: border-box;
+
+
+/* AnswerOption Component */
+.answerOption {
+  // border: 1px solid #eee;
+  // text-align: center;
+  // margin-bottom: -1px;
 }
 
-body {
-  margin: 0;
-  padding: 0;
-  background: #eee;
-  font-family: sans-serif;
-}
+// Coloring
+.answerOption:first-child {
 
-.container {
-  position: relative;
-  max-width: 800px;
-  margin: 0 auto;
-  background: #fff;
-  border-radius: 3px;
-}
+  // color: #23821E;
+  .radioCustomButton ~ .radioCustomLabel:before {
+    background-color: $color-green
+  }
 
-@media (min-width: 769px) {
-  .container {
-    margin: 2.5rem auto;
+}
+.answerOption:nth-child(2) {
+  // color: #32A532;
+  .radioCustomButton ~ .radioCustomLabel:before {
+    background-color: $color-green-light
+  }
+}
+.answerOption:nth-child(3) {
+  // color: #F0828C;
+  .radioCustomButton ~ .radioCustomLabel:before {
+    background-color: $color-orange
+  }
+}
+.answerOption:last-child {
+  // color: #B9232D;
+  .radioCustomButton ~ .radioCustomLabel:before {
+    background-color: $color-red
   }
 }
 
-// Result Component
-.result {
-  padding: 1.5rem 2.5rem;
-}
-
-// Quiz Component //
-.answerOptions {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-// QuestionCount Component //
-.questionCount {
-  padding: 1.5rem 2.5rem 0;
-  font-size: 14px;
-}
-
-// Question Component
-.question {
-  margin: 0;
-  padding: 0.5rem 2.5rem 1.5rem 2.5rem;
-}
-
-// AnswerOption Component
-.answerOption {
-  border-top: 1px solid #eee;
-}
 
 .answerOption:hover {
-  background-color: #eefbfe;
+  // background-color: #eefbfe;
 }
 
-*/
+.radioCustomButton {
+    position: absolute;
+    width: auto;
+    opacity: 0;
+}
 
+.radioCustomButton,
+.radioCustomLabel {
+    display: inline-block;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+.radioCustomLabel {
+    position: relative;
+    width: 100%;
+    margin: 0;
+    padding: $basemarginSmall $basemargin $basemarginSmall $basemargin*2;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.radioCustomButton ~ .radioCustomLabel:before {
+    position: absolute;
+    top: 11px;
+    left: 0;
+    width: 45px;
+    height: 45px;
+    // transform: translate(-50%, 0);
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    background: transparent;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    transition: all 0.3s;
+}
+
+.radioCustomButton:checked ~ .radioCustomLabel:before {
+    content: '';
+    background-image: url(./svg/icon-check.svg);
+    background-repeat: no-repeat;
+    background-size: 43px;
+    box-shadow: 0 0 0 2px #333;
+}
+
+
+
+.horizOptions,
 .answerOptions {
   margin: 1em 0;
   padding: 0;

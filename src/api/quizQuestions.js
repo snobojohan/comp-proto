@@ -24,22 +24,26 @@ var quizQuestions = [
   {
       question: "Satsa på mer privat företagsamhet och marknadsekonomi",
       answers: [
-          {
-              type: "Allians",
-              content: "Mycket bra förslag"
-          },
-          {
-              type: "SD",
-              content: "Ganska bra förslag"
-          },
-          {
-              type: "none",
-              content: "Ganska dåligt förslag"
-          },
-          {
-              type: "RodGron",
-              content: "Mycket dåligt förslag"
-          }
+        {
+            type: "RodGron",
+            content: "Mycket dåligt förslag"
+        },
+        {
+            type: "none",
+            content: "Ganska dåligt förslag"
+        }/*,
+        {
+          type: "none",
+          content: "Ingen åsikt"
+        }*/,
+        {
+            type: "SD",
+            content: "Ganska bra förslag"
+        },
+        {
+            type: "Allians",
+            content: "Mycket bra förslag"
+        }
       ]
   },
   {
