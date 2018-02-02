@@ -31,7 +31,7 @@ function Horiz(props) {
           disabled={props.answer}
           onChange={props.onAnswerSelected}
         />
-        <label className="horizLabel x-radioCustomLabel" htmlFor={key.type}>
+        <label className="horizLabel radioCustomLabel" htmlFor={key.type}>
           {key.content}
         </label>
       </li>
@@ -73,6 +73,7 @@ function Horiz(props) {
 
             <ul className="grid-container x-answerOptions">
               {props.answerOptions.map(renderAnswerOptions)}
+              <li><span className="tangent">esc</span><span className="swipe">Svajpa</span> <a href="#" className="linkRegular">Hoppa över frågan</a></li>
             </ul>
 
           </div>
