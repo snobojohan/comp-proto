@@ -516,6 +516,8 @@ end .squaredFour */
     max-width: 700px;
     margin: 0 0;
 
+    grid-gap: 40px;
+
     grid-template-areas:
       "choice1 choice2 choice3 choice4 footer";
     }
@@ -895,6 +897,13 @@ end .squaredFour */
 @media (max-width: $breakpoint-touch) {
   .tangent {
     display: none;
+  }
+  .swipe {
+    display: inline-block;
+    width: 50px;
+    .svgpath {
+      fill: $color-gray;
+    }
   }
 }
 
