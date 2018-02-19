@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import update from 'react-addons-update';
 import quizOptions from './api/quizOptions';
 import quizQuestions from './api/quizQuestions';
-import Quiz from './components/Quiz';
 import Horiz from './components/Horiz';
 import Result from './components/Result';
 import Section from './components/Section';
@@ -87,7 +86,7 @@ class App extends Component {
     if (this.state.questionId < quizQuestions.length) {
         setTimeout(() => this.setNextQuestion(), 300);
     } else {
-        setTimeout(() => this.setResults(this.getResults()), 300);
+        setTimeout(() => this.setResults(this.getResults()), 1500);
     }
   }
 
@@ -180,19 +179,6 @@ class App extends Component {
     }
   }
 
-  renderQuiz() {
-    return (
-      <Quiz
-        answer={this.state.answer}
-        answerOptions={this.state.answerOptions}
-        questionId={this.state.questionId}
-        question={this.state.question}
-        questionTotal={quizQuestions.length}
-        onAnswerSelected={this.handleAnswerSelected}
-      />
-    );
-  }
-
   renderHoriz() {
     return (
       <Horiz
@@ -243,22 +229,17 @@ class App extends Component {
     let compToRender = this.renderInfo(); // this.renderQuiz();
 
     if(getUrlParameter('regular') === "true") {
-      compToRender = this.renderQuiz();
-    }
-
-    if(getUrlParameter('irregular') === "true") {
       compToRender = this.renderHoriz();
     }
+
 
     if(getUrlParameter('prio') === "true") {
       if(!this.state.isEnd){
         compToRender = this.renderPrio();
       } else {
-        // compToRender = this.renderSection(true);
         compToRender = this.renderResult();
       }
     } else if (this.state.result) {
-      // compToRender = this.renderResult();
       compToRender = this.renderSection(false);
     }
 

@@ -81,9 +81,26 @@ $svt-color_cool-gray_extra-dark: #465055;
 $svt-color_white: #ffffff;
 $svt-color_black: #000000;
 
+/// ELECTION
+
+$color-val: #002b37;
+$color-val-gray--light: #f5f5f5;
+$color-val-gray--regular: #d8d8d8;
+$color-val-important: #7d9196;
+
+$color-val-tq--light: #cdf0e6;
+$color-val-tq--regular: #00dcd2;
+
+$color-val-party--l: #2891c8;
+$color-val-party--m: #7dbee1;
+
+
 // SPECIFIC
 $color-text: $svt-color_black;
 $color-text-inverted: $svt-color_white;
 $color-text-meta: $svt-color_cool-gray_regular;
+
+$color-hover: $svt-color_blue_dark;
+$color-click: $svt-color_blue_light;
 
 $color-borders: $svt-color_cool-gray_light;

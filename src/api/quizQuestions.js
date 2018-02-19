@@ -5,19 +5,19 @@ var quizQuestions = [
       answers: [
           {
               type: "RodGron",
-              content: "Mycket bra förslag"
+              content: "Mycket bra&nbsp;förslag"
           },
           {
               type: "SD",
-              content: "Ganska bra förslag"
+              content: "Ganska bra&nbsp;förslag"
           },
           {
               type: "none",
-              content: "Ganska dåligt förslag"
+              content: "Ganska dåligt&nbsp;förslag"
           },
           {
               type: "Allians",
-              content: "Mycket dåligt förslag"
+              content: "Mycket dåligt&nbsp;förslag"
           }
       ]
   },*/
@@ -26,11 +26,11 @@ var quizQuestions = [
       answers: [
         {
             type: "RodGron",
-            content: "Mycket dåligt förslag"
+            content: "Mycket dåligt&nbsp;förslag"
         },
         {
             type: "none",
-            content: "Ganska dåligt förslag"
+            content: "Ganska dåligt&nbsp;förslag"
         }/*,
         {
           type: "none",
@@ -38,11 +38,11 @@ var quizQuestions = [
         }*/,
         {
             type: "SD",
-            content: "Ganska bra förslag"
+            content: "Ganska bra&nbsp;förslag"
         },
         {
             type: "Allians",
-            content: "Mycket bra förslag"
+            content: "Mycket bra&nbsp;förslag"
         }
       ]
   },
@@ -51,19 +51,19 @@ var quizQuestions = [
       answers: [
           {
               type: "none",
-              content: "Mycket bra förslag"
+              content: "Mycket bra&nbsp;förslag"
           },
           {
               type: "RodGron",
-              content: "Ganska bra förslag"
+              content: "Ganska bra&nbsp;förslag"
           },
           {
               type: "Allians",
-              content: "Ganska dåligt förslag"
+              content: "Ganska dåligt&nbsp;förslag"
           },
           {
               type: "SD",
-              content: "Mycket dåligt förslag"
+              content: "Mycket dåligt&nbsp;förslag"
           }
       ]
   },
@@ -72,19 +72,19 @@ var quizQuestions = [
       answers: [
           {
               type: "SD",
-              content: "Mycket bra förslag"
+              content: "Mycket bra&nbsp;förslag"
           },
           {
               type: "Allians",
-              content: "Ganska bra förslag"
+              content: "Ganska bra&nbsp;förslag"
           },
           {
               type: "none",
-              content: "Ganska dåligt förslag"
+              content: "Ganska dåligt&nbsp;förslag"
           },
           {
               type: "RodGron",
-              content: "Mycket dåligt förslag"
+              content: "Mycket dåligt&nbsp;förslag"
           }
       ]
   },
@@ -93,19 +93,19 @@ var quizQuestions = [
       answers: [
           {
               type: "Allians",
-              content: "Mycket bra förslag"
+              content: "Mycket bra&nbsp;förslag"
           },
           {
               type: "SD",
-              content: "Ganska bra förslag"
+              content: "Ganska bra&nbsp;förslag"
           },
           {
               type: "RodGron",
-              content: "Ganska dåligt förslag"
+              content: "Ganska dåligt&nbsp;förslag"
           },
           {
               type: "none",
-              content: "Mycket dåligt förslag"
+              content: "Mycket dåligt&nbsp;förslag"
           }
       ]
   }

@@ -1,0 +1,62 @@
+.party {
+  background: #000;
+  color: #FFF;
+  width: 32px;
+  height: 30px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 2.3;
+
+  &-longname {
+    color: red;
+    display: inline-block;
+    overflow: hidden;
+    width: 1px;
+  }
+
+  &-l {
+    background-color: $color-val-party--l;
+  }
+  &-m {
+    background-color: $color-val-party--m;
+  }
+}
+
+.parties {
+
+  background-color: $color-val-gray--light;
+
+  h2, p {
+    font-size: 1em;
+    text-indent: 60px;
+    margin: 0;
+    padding: 0;
+  }
+  p {
+    display: inline-block;
+  }
+  h2 {
+    font-weight: bold;
+  }
+
+  &__row {
+    border-top: 1px solid #FFF;
+    position: relative;
+    padding: $gap-large;
+    &__interact {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: $gap-large;
+      font-size: 1.5em;
+    }
+    &__figure {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: $gap-large;
+      width: 32px;
+    }
+  }
+}

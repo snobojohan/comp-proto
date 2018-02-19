@@ -1,0 +1,326 @@
+@import 'styles/mixins';
+@import 'styles/colors';
+
+$gap-small: 5px;
+$gap-std: 10px;
+$gap-large: 20px;
+$gap-xl: $gap-large * 2;
+
+$border-radius: 8px;
+
+.db-p {
+  background-color: rgba(136,39,152,0.2);
+}
+
+.db-c {
+  background-color: rgba(53,192,180,0.2);
+}
+
+.app {
+  max-width: $tablet-width - ($gap-std * 2);
+  min-width: 320px;
+  height: 100vh;
+  margin: 0 auto;
+
+  background: #fff;
+
+  padding: $gap-std;
+
+  @include tablet {
+    padding: $gap-large;
+  }
+
+  @include desktop {
+    padding: $gap-large;
+    margin-top: $gap-large;
+    height: calc(100vh - $gap-large);
+  }
+
+}
+
+.layout-main {
+  // GRID /////
+  display: grid;
+  grid-template-rows: minmax(52px,max-content) 1fr;
+  // align-items: start; // Clarity
+  grid-gap: $gap-xl;
+  height: 100%;
+
+  div {
+    // background-color: rgba(5,0,0,0.05);
+  }
+}
+
+.layout-main-child--one {
+
+}
+
+.layout-main-child--two {
+  // align-self: stretch; // Clarity
+  position: relative;
+}
+
+
+.sublayout-head {
+  height: auto;
+  // PARENT /////
+  display: grid;
+  grid-template-columns: 40px 1fr 1fr;
+  // grid-template-rows: max-content max-content;
+  grid-gap: $gap-std;
+
+  &__progress {
+    // CHILD /////
+    grid-row: 2;
+    grid-column: 1 / 4;
+  }
+}
+
+// TODO;
+.container, .container__child {
+  height: 100%;
+  @include desktop {
+    height: auto;
+    min-height: 250px;
+  }
+}
+
+// naming
+// TODO: Rearrange
+.extra {
+  // CHILD /////
+  // grid-area: extra;
+
+  padding-bottom: $gap-small;
+}
+.label {
+  padding-bottom: $gap-small;
+  color: #67bdba;
+}
+.label-1 {
+  // CHILD /////
+  // grid-area: label-1;
+
+}
+.label-4 {
+  // CHILD /////
+  // grid-area: label-4;
+
+  text-align: right;
+}
+
+
+.footer-skip {
+  // CHILD /////
+  // grid-area: footer-skip;
+
+  text-align: center;
+  padding: $gap-large $gap-std $gap-std $gap-std;
+
+}
+
+.sublayout-main {
+
+  height: 100%;
+
+  // PARENT /////
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr fit-content(210px);
+  // align-items: start;
+
+  grid-template-areas:
+    "upper"
+    "jumper"
+    "lower";
+
+    @include desktop {
+      height: auto;
+      grid-template-rows: auto auto auto;
+      grid-template-areas:
+        "upper"
+        "lower"
+        "jumper";
+    }
+
+  grid-gap: $gap-large;
+
+  &__upper {
+    // CHILD /////
+    grid-area: upper;
+
+    @include desktop {
+      min-height: 110px;
+      padding-bottom: $gap-large;
+    }
+  }
+  &__jumper {
+    // CHILD /////
+    grid-area: jumper;
+  }
+  &-child--three {
+    // CHILD /////
+    grid-area: lower;
+  }
+
+  &__lower { // Replaced by likert
+
+
+    div {
+      // background-color: rgba(200,0,0,0.05);
+    }
+
+    // PARENT /////
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+
+  }
+
+
+
+  // PARENT /////
+  /*
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto 1fr 15px 10px;
+  grid-gap: 10px;
+
+  grid-template-areas:
+    "question question question question"
+    "args args args args"
+    "xtra xtra xtra ."
+    "label-1 label-1 label-4 label-4"
+    "option-1 option-2 option-3 option-4"
+    "footer-skip footer-skip footer-skip footer-skip";
+
+    */
+}
+
+.question {
+    font-size: 28px;
+    line-height: 31px;
+    font-weight: bold;
+    padding-bottom: 0;
+
+    @include tablet-and-larger {
+      font-size: 32px;
+      line-height: 35px;
+
+    }
+
+
+}
+
+///
+.label-area, .counter-area, .bwd-area {
+  font-size: 16px;
+  text-transform: uppercase;
+	line-height: 2;
+}
+.label-area {
+  display: inline-block;
+  background: $color-val;
+  @include font-smoothing;
+  color: #fff;
+	font-weight: bold;
+  padding: 0 0.75em;
+}
+.bwd-area {
+  text-decoration: none;
+  font-size: 40px;
+  line-height: 30px;
+  // font-weight: bold;
+}
+.important-area {
+  display: inline-block;
+  color: #FFF;
+  background: $color-val-important;
+  position: relative;
+  line-height: 1.6;
+  padding: 0 10px;
+
+  input[type="checkbox"] {
+    opacity: 0;
+  }
+  label {
+    // margin-left: 10px;
+  }
+  label::before {
+    content: "";
+    display: inline-block;
+    height: 16px;
+    width: 16px;
+    background: #FFF;
+    position: absolute;
+    top: 4px;
+    left: 5px;
+  }
+  label::after {
+      content: "";
+      display: inline-block;
+      height: 6px;
+      width: 9px;
+      border-left: 2px solid;
+      border-bottom: 2px solid;
+      transform: rotate(-45deg);
+      position: absolute;
+      top: 8px;
+      left: 9px;
+  }
+
+  /*Hide the checkmark by default*/
+  input[type="checkbox"] + label::after {
+      content: none;
+  }
+
+  /*Unhide the checkmark on the checked state*/
+  input[type="checkbox"]:checked + label::after {
+    content: "";
+  }
+}
+.head-count {
+  text-align: right;
+}
+
+.progbar {
+  background: $color-val-gray--regular;
+  &__inner {
+    background: $color-val;
+    height: 8px;
+    width: 33%;
+  }
+}
+
+// ANIMATIONS
+.woho-enter {
+  // opacity: 0;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 5000px;
+}
+
+.woho-enter.woho-enter-active {
+  // opacity: 1;
+  transition: all .5s ease-in-out .5s;
+  left: 0;
+}
+
+.woho-leave {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    // opacity: 1;
+}
+
+.woho-leave.woho-leave-active {
+  // opacity: 0;
+  left: -5000px;
+  transition: all .5s ease-in-out .5s;
+}
+
+@import "parties";
+@import "likert";

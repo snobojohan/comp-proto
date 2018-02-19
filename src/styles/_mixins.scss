@@ -1,29 +1,51 @@
+$tablet-width: 768px;
+$desktop-width: 1024px;
+
+@mixin likert-fake-button {
+  .likert__radio ~ .likert__label:after {
+    @content;
+  }
+}
+
+// TODO: checked
+@mixin likert-fake-button--checked {
+  .likert__radio:checked ~ .likert__label:after {
+      @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin tablet-and-larger {
+  @media (min-width: #{$tablet-width}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$desktop-width}) {
+    @content;
+  }
+}
+
 /**
  * A mixin which helps you to add depth to elements according to the Google Material Design spec:
  * http://www.google.com/design/spec/layout/layout-principles.html#layout-principles-dimensionality
  *
- * Please note that the values given in the specification cannot be used as is. To create the same visual experience
- * the blur parameter has to be doubled.
- * Example usage:
- *
  * .card {
- *     width: 95px;
- *     height: 95px;
- *     background: #f4f4f4;
- *     -webkit-transition: all 250ms;
- *     -moz-transition: all 250ms;
  *     transition: all 250ms;
  *     @include box_shadow(1);
  *     &:hover {
  *         @include box_shadow(3);
- *         -webkit-transform: translateY(-5px);
- *         -moz-transform: translateY(-5px);
  *         transform: translateY(-5px);
  *     }
  * }
  *
  */
-// https://gist.github.com/paulmelnikow/7fcfbe4f68e5df7fe326
 @mixin box_shadow ($level) {
 
     @if $level == 1 {

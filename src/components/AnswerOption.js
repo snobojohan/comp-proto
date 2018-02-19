@@ -1,9 +1,9 @@
 import React from 'react';
 
 function AnswerOption(props) {
-
+  const name = 'likert__option likert__option--' + props.key;
   return (
-    <li className="answerOption">
+    <div className={name}>
       <input
         type="radio"
         className="radioCustomButton"
@@ -17,7 +17,7 @@ function AnswerOption(props) {
       <label className="radioCustomLabel" htmlFor={props.answerType}>
         {props.answerContent}
       </label>
-    </li>
+    </div>
   );
 
 }
