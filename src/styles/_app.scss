@@ -19,8 +19,11 @@ $border-radius: 8px;
 .app {
   max-width: $tablet-width - ($gap-std * 2);
   min-width: 320px;
-  height: 100vh;
+  height: 100%;
   margin: 0 auto;
+}
+
+.layout-main {
 
   background: #fff;
 
@@ -33,18 +36,17 @@ $border-radius: 8px;
   @include desktop {
     padding: $gap-large;
     margin-top: $gap-large;
-    height: calc(100vh - $gap-large);
+    height: auto;
   }
 
-}
-
-.layout-main {
   // GRID /////
   display: grid;
   grid-template-rows: minmax(52px,max-content) 1fr;
   // align-items: start; // Clarity
   grid-gap: $gap-xl;
-  height: 100%;
+  min-height: 100%;
+
+  // background: red;
 
   div {
     // background-color: rgba(5,0,0,0.05);

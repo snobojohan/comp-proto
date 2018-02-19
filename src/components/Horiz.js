@@ -112,7 +112,7 @@ function Horiz(props) {
                 <div className="parties__row__figure party party-l">
                   L
                 </div>
-                <span className="party-longname">Moderaterna</span>
+                <span className="party-longname">Liberalerna</span>
                 <p>"Vi tycker att det är självklart att Sverige..."</p>
                 <div className="parties__row__interact">
                   <MdArrowDown />
@@ -124,6 +124,27 @@ function Horiz(props) {
                   <span>M</span>
                 </div>
                 <span className="party-longname">Moderaterna</span>
+              </div>
+
+              <div className="parties__row">
+                <div className="parties__row__figure">
+                  <img src={emojPb} alt="Rätt så missnöjd emoji" />
+                </div>
+                <h2>Ganska dåligt förslag</h2>
+              </div>
+
+              <div className="parties__row">
+                <div className="parties__row__figure party party-kd">
+                  <span>KD</span>
+                </div>
+                <span className="party-longname">Kristdemokraterna</span>
+              </div>
+
+              <div className="parties__row">
+                <div className="parties__row__figure party party-c">
+                  <span>C</span>
+                </div>
+                <span className="party-longname">Centern</span>
               </div>
 
 
