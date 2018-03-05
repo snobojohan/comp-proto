@@ -56,8 +56,12 @@ a {
 }
 
 .root {
-  overflow-x: hidden;
+  // overflow-x: hidden;
   height: 100%;
 }
 
+@import 'styles/typography';
+@import 'styles/buttons';
 @import 'styles/app';
+@import 'styles/parties';
+@import 'styles/likert';

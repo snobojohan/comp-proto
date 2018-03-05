@@ -23,12 +23,13 @@ $border-radius: 8px;
   margin: 0 auto;
 }
 
-.layout-main {
+.card-main {
 
-  background: #fff;
-
+  @include nyheter-card;
   padding: $gap-std;
 
+
+  // background: red;
   @include tablet {
     padding: $gap-large;
   }
@@ -36,8 +37,17 @@ $border-radius: 8px;
   @include desktop {
     padding: $gap-large;
     margin-top: $gap-large;
-    height: auto;
+    min-height: auto;
   }
+
+  &--overflow-x {
+    overflow-x: hidden;
+  }
+
+}
+
+
+.layout-main {
 
   // GRID /////
   display: grid;
@@ -46,15 +56,10 @@ $border-radius: 8px;
   grid-gap: $gap-xl;
   min-height: 100%;
 
-  // background: red;
-
-  div {
-    // background-color: rgba(5,0,0,0.05);
-  }
 }
 
 .layout-main-child--one {
-
+  min-height: 52px;
 }
 
 .layout-main-child--two {
@@ -211,8 +216,6 @@ $border-radius: 8px;
       line-height: 35px;
 
     }
-
-
 }
 
 ///
@@ -295,18 +298,27 @@ $border-radius: 8px;
   }
 }
 
+// HELPERS
+.makeMeSticky {
+    position: sticky;
+    top: 0;
+    padding: .5rem 2rem;
+    background: rgba(255,255,255,0.8);
+    box-shadow: 0 0 25px rgba(255,255,255,0.8);
+}
+
 // ANIMATIONS
 .woho-enter {
   // opacity: 0;
   width: 100%;
   position: absolute;
   top: 0;
-  left: 5000px;
+  left: 2500px;
 }
 
 .woho-enter.woho-enter-active {
   // opacity: 1;
-  transition: all .5s ease-in-out .5s;
+  transition: all .4s ease-in-out .5s;
   left: 0;
 }
 
@@ -320,9 +332,6 @@ $border-radius: 8px;
 
 .woho-leave.woho-leave-active {
   // opacity: 0;
-  left: -5000px;
-  transition: all .5s ease-in-out .5s;
+  left: -2500px;
+  transition: all .4s ease-in-out .5s;
 }
-
-@import "parties";
-@import "likert";

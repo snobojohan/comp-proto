@@ -29,8 +29,12 @@
     background-color: $color-val-party--c;
   }
 }
-
+.temp {
+  //display: inline-block;
+}
 .parties {
+
+  display: none;
 
   background-color: $color-val-gray--light;
 
